@@ -39,7 +39,7 @@ class Printer:
         Initialization method of Printer() class.
         """
 
-        self.VERSION = [0, 0, 1, 0]
+        self.VERSION = [0, 0, 1, 1]
         self.__initialized = False
 
     def init(self):
@@ -136,22 +136,22 @@ class Printer:
 
         if type(status) is int:
             if status == 0:
-                prompt = "{1}[{2}i{1}] {2}{0}{1}".format(obj, colorama.Style.RESET_ALL, colorama.Fore.LIGHTGREEN_EX)
+                prompt = "{1}{3}[{2}i{3}] {1}{0}{1}".format(obj, colorama.Style.RESET_ALL, colorama.Fore.LIGHTGREEN_EX, colorama.Fore.LIGHTBLACK_EX)
 
             elif status == 1:
-                prompt = "{1}[{2}!{1}] {2}{0}{1}".format(obj, colorama.Style.RESET_ALL, colorama.Fore.YELLOW)
+                prompt = "{1}{3}[{2}!{3}] {1}{0}{1}".format(obj, colorama.Style.RESET_ALL, colorama.Fore.YELLOW, colorama.Fore.LIGHTBLACK_EX)
 
             elif status == 2:
-                prompt = "{1}[{2}E{1}] {2}{0}{1}".format(obj, colorama.Style.RESET_ALL, colorama.Fore.RED)
+                prompt = "{1}{3}[{2}E{3}] {1}{0}{1}".format(obj, colorama.Style.RESET_ALL, colorama.Fore.RED, colorama.Fore.LIGHTBLACK_EX)
 
             elif status == 3:
-                prompt = "{3}{1}[{2}CRITICAL{1}] {2}{0}{1}".format(obj, colorama.Style.RESET_ALL, colorama.Fore.LIGHTRED_EX, colorama.Style.BRIGHT)
+                prompt = "{1}{3}{4}[{2}CRITICAL{4}] {1}{0}{1}".format(obj, colorama.Style.RESET_ALL, colorama.Fore.LIGHTRED_EX, colorama.Style.BRIGHT, colorama.Fore.LIGHTBLACK_EX)
 
             elif status == 4:
-                prompt = "{1}[{2}?{1}] {2}{0}{1}".format(obj, colorama.Style.RESET_ALL, colorama.Fore.CYAN)
+                prompt = "{1}{3}[{2}?{3}] {1}{0}{1}".format(obj, colorama.Style.RESET_ALL, colorama.Fore.CYAN, colorama.Fore.LIGHTBLACK_EX)
 
             elif status == 5:
-                prompt = "{3}{1}[{2}...{1}] {2}{0}{1}".format(obj, colorama.Style.RESET_ALL, colorama.Fore.LIGHTBLACK_EX, colorama.Style.DIM)
+                prompt = "{1}{3}[{2}...{3}] {1}{0}{1}".format(obj, colorama.Style.RESET_ALL, colorama.Fore.LIGHTBLACK_EX, colorama.Style.DIM)
 
             else:
                 raise ValueError("Unknown status number")
