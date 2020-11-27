@@ -39,7 +39,7 @@ class Printer:
         Initialization method of Printer() class.
         """
 
-        self.VERSION = [0, 0, 1, 1]
+        self.VERSION = [0, 0, 1, 2]
         self.__initialized = False
 
     def init(self):
@@ -151,7 +151,7 @@ class Printer:
                 prompt = "{1}{3}[{2}?{3}] {1}{0}{1}".format(obj, colorama.Style.RESET_ALL, colorama.Fore.CYAN, colorama.Fore.LIGHTBLACK_EX)
 
             elif status == 5:
-                prompt = "{1}{3}[{2}...{3}] {1}{0}{1}".format(obj, colorama.Style.RESET_ALL, colorama.Fore.LIGHTBLACK_EX, colorama.Style.DIM)
+                prompt = "{1}{3}[{2}...{1}{3}] {1}{0}{1}".format(obj, colorama.Style.RESET_ALL, colorama.Fore.LIGHTBLACK_EX, colorama.Style.DIM)
 
             else:
                 raise ValueError("Unknown status number")
